@@ -119,13 +119,24 @@ with input_col2:
     se_a = st.number_input("SE Absorption (dB)", value=5.53, step=0.1)
 
 with input_col3:
-    sig_star = st.number_input("Sigma Star (S/m)", value=1.286, step=0.01)
-    se_t = st.number_input("SE Total (dB)", value=23.7, step=0.1)
+    # AUTO-CALCULATED VALUES
+    sig_star = sig_eff / 10
+    se_t = se_r + se_a
+
+    st.write(f"**Sigma Star (Auto)**: {sig_star:.3f} S/m")
+    st.write(f"**SE Total (Auto)**: {se_t:.2f} dB")
 
 # Prediction Button
 if st.button("Predict Material Composition", type="primary"):
     # Prepare input array
-    input_data = np.array([freq, sig_eff, sig_star, se_r, se_a, se_t]).reshape(1, -1)
+    input_data = np.array([
+        freq,
+        sig_eff,
+        sig_eff / 10,      # sigma_star
+        se_r,
+        se_a,
+        se_r + se_a        # SE_T
+    ]).reshape(1, -1)
     
     # Make Prediction
     prediction = model.predict(input_data)[0]
