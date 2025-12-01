@@ -24,7 +24,7 @@ based on desired electromagnetic shielding properties.
 
 # Define default file path (local fallback)
 default_file = 'generated_shielding_data_full.csv'
-
+uploaded_file = None
 df = None
 
 # Logic to load data (either from upload or local file)
