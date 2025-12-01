@@ -34,7 +34,7 @@ if uploaded_file is not None:
 else:
     try:
         df = pd.read_csv(default_file)
-        st.sidebar.info(f"Loaded local file: `{default_file}`")
+        # st.sidebar.info(f"Loaded local file: `{default_file}`")
     except FileNotFoundError:
         st.error("❌ Data not found. Please upload the CSV file in the sidebar.")
         st.stop()
