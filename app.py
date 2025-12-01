@@ -18,9 +18,9 @@ This application predicts the required material composition (**Biochar, PANI, MW
 based on desired electromagnetic shielding properties.
 """)
 
-# --- Sidebar: Data Upload ---
-st.sidebar.header("1. Upload Data")
-uploaded_file = st.sidebar.file_uploader("Upload 'generated_shielding_data_full.csv'", type=["csv"])
+# # --- Sidebar: Data Upload ---
+# st.sidebar.header("1. Upload Data")
+# uploaded_file = st.sidebar.file_uploader("Upload 'generated_shielding_data_full.csv'", type=["csv"])
 
 # Define default file path (local fallback)
 default_file = 'generated_shielding_data_full.csv'
