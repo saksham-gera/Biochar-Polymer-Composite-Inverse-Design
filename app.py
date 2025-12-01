@@ -12,7 +12,7 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("🧪 Biochar-Polymer Composite Inverse Design")
+st.title("Biochar-Polymer Composite Inverse Design")
 st.markdown("""
 This application predicts the required material composition (**Biochar, PANI, MWCNT**) 
 based on desired electromagnetic shielding properties.
